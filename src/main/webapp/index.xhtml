@@ -10,8 +10,12 @@
 <h:head>
 </h:head>
 <h:body>
-	<h1>Hello World PrimeFaces</h1>
-
+	<h1>Ejemplos empleando primefaces</h1>
+	<div class="card">
+	    <p:link outcome="mapsDetail" value="Bookmark">
+	        <f:param name="productId" value="10"/>
+	    </p:link>
+	</div>
 	<h:form>
 	<p:editor value="#{editor.value}" />
 	<p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
