@@ -16,18 +16,11 @@
 	<h:form prependId="false">
         <p:growl id="messages" showDetail="true" life="2000"/>
         <p:gmap id="gmap" center="36.890257,30.707417" zoom="15" type="ROADMAP" style="width:100%;height:400px"
-        	model="#{mapsDetailView.simpleModel}">
-            <p:ajax event="stateChange" listener="#{mapsDetailView.onStateChange}" update="messages"/>
-            <p:ajax event="pointSelect" listener="#{mapsDetailView.onPointSelect}" update="messages"/>
+        	model="#{mapasGoogleView.simpleModel}">
+            <p:ajax event="stateChange" listener="#{mapasGoogleView.onStateChange}" update="messages"/>
+            <p:ajax event="pointSelect" listener="#{mapasGoogleView.onPointSelect}" update="messages"/>
         </p:gmap>
     </h:form>
-
-	<div class="card">
-	    <p class="p-m-0">You've been redirected to this bookmarkable page with button.
-	        ViewParameter you've passed is <strong>"#{productDetailView.productId}"</strong>
-	    </p>
-	</div>
-	
 
 </h:body>
 </html>
