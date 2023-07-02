@@ -34,3 +34,6 @@ https://www.youtube.com/watch?v=wxhLn--rZ2o
 >- http://www.primefaces.org:8080/showcase/ui/data/datatable/basic.xhtml?jfwid=137ff
 >- https://www.logicbig.com/tutorials/misc/primefaces/data-table.html
 >- https://codigoxules.org/tutorial-primefaces-1-definicion-del-proyecto-creacion-primefaces-crud/
+
+### levantar un proyecto primefaces con tomcat
+>- mvn tomcat7:run-war
