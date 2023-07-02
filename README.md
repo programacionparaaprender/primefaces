@@ -29,3 +29,8 @@ https://stackoverflow.com/questions/6799503/classpath-entry-org-eclipse-m2e-mave
 
 ### actualizar con maven
 https://www.youtube.com/watch?v=wxhLn--rZ2o
+
+### ejemplo de datatable
+>- http://www.primefaces.org:8080/showcase/ui/data/datatable/basic.xhtml?jfwid=137ff
+>- https://www.logicbig.com/tutorials/misc/primefaces/data-table.html
+>- https://codigoxules.org/tutorial-primefaces-1-definicion-del-proyecto-creacion-primefaces-crud/

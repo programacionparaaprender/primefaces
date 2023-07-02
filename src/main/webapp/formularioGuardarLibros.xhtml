@@ -46,19 +46,6 @@
        
     </p:panel>
 	</h:form>
-	
-	<h:form>
-    <div class="card">
-        <p:dataTable var="book" value="#{booksBean.books}">
-            <p:column headerText="Id">
-                <h:outputText value="#{book.id}" />
-            </p:column>
-			<p:column headerText="Name">
-                <h:outputText value="#{book.name}" />
-            </p:column>
-        </p:dataTable>
-    </div>
-</h:form>
 
 </h:body>
 </html>
