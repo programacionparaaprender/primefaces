@@ -37,3 +37,6 @@ https://www.youtube.com/watch?v=wxhLn--rZ2o
 
 ### levantar un proyecto primefaces con tomcat
 >- mvn tomcat7:run-war
+
+### error Java compiler level does not match the version of the installed Java project facet.
+>- https://www.digitalocean.com/community/tutorials/eclipse-java-compiler-level-does-not-match-the-version-of-the-installed-java-project-facet
