@@ -14,7 +14,7 @@
 	<div class="card">
 		<h:form id="form">
 			<!-- process="@this" update=":form:datos" onclick="PF('dlg2').show();" -->
-            <p:commandButton value="CREAR" type="button"  actionListener="#{BooksBean.reinstanciar2}"  />
+            <p:commandButton value="CREAR" type="button"  actionListener="#{BooksBean.reinstanciar}"  />
 
             <p:dataTable var="book" value="#{booksBean.books}">
 	            <p:column headerText="Id">

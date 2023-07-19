@@ -110,11 +110,6 @@ public class BooksBean   implements Serializable {
 		book = new Books("Libro nuevo");
 	}
 
-	public void reinstanciar2(ActionEvent event) {
-		book = new Books("Libro nuevo");
-	}
-
-	
 	public Books getBook() {
 		return book;
 	}
