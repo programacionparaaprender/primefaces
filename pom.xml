@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.programacionparaaprender.maven</groupId>
-  <artifactId>primefaces2</artifactId>
+  <artifactId>primefaces</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>primefaces2 Maven Webapp</name>
+  <name>primefaces Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -86,6 +86,17 @@
     
   </dependencies>
   <build>
-    <finalName>primefaces2</finalName>
-  </build>
+    <finalName>primefaces</finalName>
+  	<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+	</plugins>
+	</build>	
 </project>

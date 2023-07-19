@@ -12,6 +12,35 @@
 <h:body>
 	<h1>Ejemplos empleando primefaces</h1>
 	<div class="card">
+		<h:form id="form">
+			<!-- process="@this" update=":form:datos" onclick="PF('dlg2').show();" -->
+            <p:commandButton value="CREAR" type="button"  actionListener="#{BooksBean.reinstanciar2}"  />
+
+            <p:dataTable var="book" value="#{booksBean.books}">
+	            <p:column headerText="Id">
+	                <h:outputText value="#{book.id}" />
+	            </p:column>
+				<p:column headerText="Name">
+	                <h:outputText value="#{book.name}" />
+	            </p:column>
+        	</p:dataTable>
+            <p:dialog header="Procesando" widgetVar="dlg2" minHeight="150" width="400" showEffect="fade" modal="true">
+                <h:panelGrid id="datos" columns="1">
+                    <p:panelGrid columns="2">
+                        <h:outputText value="NOMBRE" />
+                        <p:inputText value="#{BooksBean.book.name}" />
+                    </p:panelGrid>
+                    <p:panelGrid columns="2">
+                        <p:commandButton type="button" icon="pi pi-external-link" value="GRABAR"  update=":form" action="#{BooksBean.procesar()}" oncomplete="PF('dlg2').hide();" />
+                        <p:commandButton value="CANCELAR" type="button" icon="pi pi-external-link" onclick="PF('dlg2').hide();" />
+                    </p:panelGrid>
+                </h:panelGrid>
+            </p:dialog>
+        </h:form>
+	</div>
+	
+	
+	<div class="card">
 	    <p:link outcome="mapsDetail" value="Bookmark">
 	        <f:param name="productId" value="10"/>
 	    </p:link>
@@ -48,17 +77,17 @@
 	</h:form>
 	
 	<h:form>
-    <div class="card">
-        <p:dataTable var="book" value="#{booksBean.books}">
-            <p:column headerText="Id">
-                <h:outputText value="#{book.id}" />
-            </p:column>
-			<p:column headerText="Name">
-                <h:outputText value="#{book.name}" />
-            </p:column>
-        </p:dataTable>
-    </div>
-</h:form>
+	    <div class="card">
+	        <p:dataTable var="book" value="#{booksBean.books}">
+	            <p:column headerText="Id">
+	                <h:outputText value="#{book.id}" />
+	            </p:column>
+				<p:column headerText="Name">
+	                <h:outputText value="#{book.name}" />
+	            </p:column>
+	        </p:dataTable>
+	    </div>
+	</h:form>
 
 </h:body>
 </html>

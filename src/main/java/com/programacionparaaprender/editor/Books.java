@@ -9,6 +9,11 @@ public class Books {
 
 	}
 	 
+	 public Books(String name) {
+			super();
+			this.name = name;
+	 }
+	 
 	 public Books(Integer id, String name) {
 		super();
 		this.id = id;

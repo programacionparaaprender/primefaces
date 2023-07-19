@@ -40,3 +40,6 @@ https://www.youtube.com/watch?v=wxhLn--rZ2o
 
 ### error Java compiler level does not match the version of the installed Java project facet.
 >- https://www.digitalocean.com/community/tutorials/eclipse-java-compiler-level-does-not-match-the-version-of-the-installed-java-project-facet
+
+### insertar datos en sql server con java
+>- https://learn.microsoft.com/es-es/sql/connect/jdbc/step-3-proof-of-concept-connecting-to-sql-using-java?view=sql-server-ver16

@@ -8,29 +8,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
-import javax.faces.event.ActionEvent;
-import javax.annotation.PostConstruct;
 
 @ManagedBean
-@ViewScoped
 @SessionScoped
-public class BooksBean   implements Serializable {
+public class BookView  implements Serializable {
     
    /**
 	 * 
 	 */
-	private static final long serialVersionUID = -8470241778864558955L;
+	private static final long serialVersionUID = -8470241778864558952L;
 	private List<Books> books;
 	private Books book;
 	private int tipoAccion = 1;
+	
+	public BookView() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@PostConstruct
     public void init() {
     	 Connection conexion=null; 
     	 books = new java.util.LinkedList<Books>();
-    	 reinstanciar();
   	     try {
   	          Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
   	          String connectionUrl = "jdbc:sqlserver://localhost:1433;" +
@@ -107,14 +108,9 @@ public class BooksBean   implements Serializable {
 		return books;
 	}
 	public void reinstanciar() {
-		book = new Books("Libro nuevo");
+		book = new Books();
 	}
 
-	public void reinstanciar2(ActionEvent event) {
-		book = new Books("Libro nuevo");
-	}
-
-	
 	public Books getBook() {
 		return book;
 	}
@@ -130,5 +126,5 @@ public class BooksBean   implements Serializable {
 	public void setTipoAccion(int tipoAccion) {
 		this.tipoAccion = tipoAccion;
 	}
-	
+
 }
