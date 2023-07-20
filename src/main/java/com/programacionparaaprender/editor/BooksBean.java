@@ -9,10 +9,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 import javax.annotation.PostConstruct;
+import javax.faces.bean.SessionScoped;
+//import javax.inject.Named;
+//import javax.enterprise.context.SessionScoped;
 
 @ManagedBean
 @ViewScoped

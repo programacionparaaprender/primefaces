@@ -7,6 +7,9 @@
 ### Repositorio de librerias java
 >- mvnrepository.com
 
+### actualización importante de realizar
+>- https://stackoverflow.com/questions/38040947/the-type-managedbean-is-deprecated
+
 ### Crear componentes por composición
 >- https://www.adictosaltrabajo.com/2010/04/20/jsf-2-facelets-templates-and-composite-components/
 
