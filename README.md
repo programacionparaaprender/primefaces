@@ -4,10 +4,11 @@
 
 
 
+### Repositorio de librerias java
+>- mvnrepository.com
 
-mvnrepository.com
-
-
+### Crear componentes por composición
+>- https://www.adictosaltrabajo.com/2010/04/20/jsf-2-facelets-templates-and-composite-components/
 
 
 ### ejemplo de maps
