@@ -30,36 +30,33 @@
 
 <h:body>
     <div class="form-container">
-        <h:form id="createForm" prependId="false">
-            <h2 class="form-title">Crear Nuevo Estudiante</h2>
-            
-            <p:messages id="messages" showDetail="true" autoUpdate="true" />
-            
-            <p:panelGrid columns="2" layout="grid" styleClass="ui-panelgrid-blank form-grid">
-                <p:outputLabel for="firstName" value="Nombre:" />
-                <p:inputText id="firstName" value="#{studentController.selectedStudent.firstName}" 
-                           required="true" requiredMessage="El nombre es requerido" />
-                
-                <p:outputLabel for="lastName" value="Apellido:" />
-                <p:inputText id="lastName" value="#{studentController.selectedStudent.lastName}" 
-                           required="true" requiredMessage="El apellido es requerido" />
-                
-                <p:outputLabel for="email" value="Email:" />
-                <p:inputText id="email" value="#{studentController.selectedStudent.email}" 
-                           required="true" requiredMessage="El email es requerido" />
-            </p:panelGrid>
-            
-            <div class="form-buttons">
-                <p:commandButton value="Guardar" action="#{studentController.addStudent}" 
-                               update="messages" process="@form" icon="pi pi-save"
-                               oncomplete="if(!args.validationFailed) window.location.href='list-students.xhtml?faces-redirect=true'" />
-                               
-                <p:commandButton value="Cancelar" immediate="true" 
-                               action="#{studentController.loadStudents}"
-                               outcome="list-students?faces-redirect=true" 
-                               icon="pi pi-times" styleClass="ui-button-secondary" />
-            </div>
-        </h:form>
+    <h:form id="createForm" prependId="false">
+    	<f:event type="preRenderView" listener="#{studentController.prepareCreate()}" />
+        <h2 class="form-title">Crear Nuevo Estudiante</h2>
+        <p:messages id="messages" showDetail="true" autoUpdate="true" />        
+        <p:panelGrid columns="2" layout="grid" styleClass="ui-panelgrid-blank form-grid">
+        <p:outputLabel for="firstName" value="Nombre:" />
+        <p:inputText id="firstName" value="#{studentController.selectedStudent.firstName}" 
+                   required="true" requiredMessage="El nombre es requerido" />
+        <p:outputLabel for="lastName" value="Apellido:" />
+        <p:inputText id="lastName" value="#{studentController.selectedStudent.lastName}" 
+                   required="true" requiredMessage="El apellido es requerido" />
+        <p:outputLabel for="email" value="Email:" />
+        <p:inputText id="email" value="#{studentController.selectedStudent.email}" 
+                   required="true" requiredMessage="El email es requerido" />
+        </p:panelGrid>
+
+        <div class="form-buttons">
+              <p:commandButton value="Guardar" action="#{studentController.addStudent}" 
+                             update="messages" process="@form" icon="pi pi-save"
+                             oncomplete="if(!args.validationFailed) window.location.href='list-students.xhtml?faces-redirect=true'" />
+                             
+              <p:commandButton value="Cancelar" immediate="true" 
+                             action="#{studentController.loadStudents}"
+                             outcome="list-students?faces-redirect=true" 
+                             icon="pi pi-times" styleClass="ui-button-secondary" />
+          </div>
+      </h:form>
     </div>
 </h:body>
 </html>

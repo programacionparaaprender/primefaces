@@ -55,19 +55,25 @@
                 </p:column>
                 
                 <p:column headerText="Acciones" style="width: 20%; text-align: center">
-                    <p:commandButton icon="pi pi-pencil" title="Editar" 
-                                   action="#{studentController.prepareUpdate(student)}" 
-                                   update=":messages" immediate="true"
-                                   outcome="update-student?faces-redirect=true" 
-                                   styleClass="ui-button-info" />
-                    
+				    <p:commandButton icon="pi pi-pencil" title="Editar" 
+					               action="#{studentController.prepareUpdate(student.id)}" 
+					               update=":messages"
+					               styleClass="ui-button-info">
+					    <f:param name="studentId" value="#{student.id}" />
+					</p:commandButton>
                     <p:commandButton icon="pi pi-trash" title="Eliminar" 
-                                   action="#{studentController.deleteStudent(student)}" 
+                                   action="#{studentController.deleteStudent(student.id)}" 
                                    update=":mainForm:studentsTable :messages" 
                                    styleClass="ui-button-danger"
                                    oncomplete="if (args &amp;&amp; !args.validationFailed) PF('confirmDialog').hide()">
-                        <p:confirm header="Confirmación" message="¿Estás seguro de eliminar este estudiante?" 
-                                  icon="pi pi-exclamation-triangle" />
+                                  
+                        <p:confirmDialog widgetVar="confirmDialog"
+                        		icon="pi pi-exclamation-triangle"
+					            header="Confirmar eliminación"
+					            message="¿Estás seguro de eliminar este estudiante?"
+					            severity="warn">
+						</p:confirmDialog>
+                                  <f:param name="studentId" value="#{student.id}" />
                     </p:commandButton>
                 </p:column>
             </p:dataTable>

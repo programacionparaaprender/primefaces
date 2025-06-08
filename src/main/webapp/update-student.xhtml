@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<f:metadata>
+    <f:viewParam name="studentId" value="#{studentController.selectedStudent.id}" />
+    <f:event type="preRenderView" listener="#{studentController.prepareUpdate}" />
+</f:metadata>
+
+<h:head>
+    <title>Editar Estudiante</title>
+    <!-- Estilos permanecen igual -->
+</h:head>
+
+<h:body>
+    <div class="form-container">
+        <h:form id="editForm">
+            <h2 class="form-title">Editar Estudiante</h2>
+            
+            <p:messages id="messages" showDetail="true" autoUpdate="true" />
+            
+            <p:panelGrid columns="2" layout="grid" styleClass="ui-panelgrid-blank form-grid">
+                <p:outputLabel for="id" value="ID:" />
+                <p:outputLabel id="id" value="#{studentController.selectedStudent.id}" />
+                
+                <p:outputLabel for="firstName" value="Nombre:" />
+                <p:inputText id="firstName" value="#{studentController.selectedStudent.firstName}" 
+                           required="true" requiredMessage="El nombre es requerido" />
+                
+                <p:outputLabel for="lastName" value="Apellido:" />
+                <p:inputText id="lastName" value="#{studentController.selectedStudent.lastName}" 
+                           required="true" requiredMessage="El apellido es requerido" />
+                
+                <p:outputLabel for="email" value="Email:" />
+                <p:inputText id="email" value="#{studentController.selectedStudent.email}" 
+                           required="true" requiredMessage="El email es requerido" />
+            </p:panelGrid>
+            
+            <div class="form-buttons">
+                <p:commandButton value="Actualizar" 
+                               action="#{studentController.updateStudent}" 
+                               update="messages" 
+                               process="@form" 
+                               icon="pi pi-save"
+                               oncomplete="if(!args.validationFailed) PF('dlg').hide()" />
+                               
+                <p:button value="Cancelar" 
+                        outcome="list-students?faces-redirect=true" 
+                        icon="pi pi-times" 
+                        styleClass="ui-button-secondary" />
+            </div>
+        </h:form>
+    </div>
+</h:body>
+</html>
